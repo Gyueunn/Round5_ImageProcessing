@@ -1,6 +1,7 @@
 package camp.java.project5;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,35 +12,38 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class ButtonPanel extends JPanel {//버튼액셩 리스너 
-	private JButton open, save, grayScale, brightness, function3, origin;
+	private JButton open, save, grayScale, brightness, crop, origin, inversion;
 	
 	public ButtonPanel() {
-//		setLayout(null);
-		setLayout(new GridLayout(1, 5));
+		setLayout(new GridLayout(1, 7));
 		setBounds(0, 20, 1440, 50);
 		
 		open = new JButton("Open");
-//		open.setBounds(10, 0, 276, 50);
+		open.setFont(new Font("Arial", Font.ITALIC, 30));
 		this.add(open);
 		
 		save = new JButton("Save");
-//		open.setBounds(286, 0, 276, 50);
+		save.setFont(new Font("Arial", Font.ITALIC, 30));
 		this.add(save);
 		
 		grayScale = new JButton("GrayScale");
-//		open.setBounds(572, 0, 276, 50);
+		grayScale.setFont(new Font("Arial", Font.ITALIC, 30));
 		this.add(grayScale);
 		
 		brightness = new JButton("Brightness");
-//		open.setBounds(858, 0, 276, 50);
+		brightness.setFont(new Font("Arial", Font.ITALIC, 30));
 		this.add(brightness);
 		
-		function3 = new JButton("기능3");
-//		open.setBounds(1144, 0, 276, 50);
-		this.add(function3);
+		crop = new JButton("Crop");
+		crop.setFont(new Font("Arial", Font.ITALIC, 30));
+		this.add(crop);
+		
+		inversion = new JButton("Inversion");
+		inversion.setFont(new Font("Arial", Font.ITALIC, 30));
+		this.add(inversion);
 		
 		origin = new JButton("Reset");
-//		open.setBounds(1430, 0, 276, 50);
+		origin.setFont(new Font("Arial", Font.ITALIC, 30));
 		this.add(origin);
 		
 		this.setBackground(Color.LIGHT_GRAY);
@@ -68,6 +72,22 @@ public class ButtonPanel extends JPanel {//버튼액셩 리스너
 		this.grayScale = grayScale;
 	}
 	
+	//crop 
+	public JButton getCrop() {
+		return crop;
+	}
+	public void setCrop(JButton crop) {
+		this.crop =crop;
+	}
+		
+	//밝기 조절하기 
+	public JButton getBrightness() {
+		return brightness;
+	}
+	public void setBrightness(JButton brightness) {
+		this.brightness = brightness;
+	}
+	
 	//원본으로 되돌리기 
 	public JButton getOrigin() {
 		return origin;
@@ -76,11 +96,12 @@ public class ButtonPanel extends JPanel {//버튼액셩 리스너
 		this.origin = origin;
 	}
 	
-	//밝기 조절하기 
-	public JButton getBrightness() {
-		return brightness;
+	//색 반전 
+	public JButton getInversion() {
+		return inversion;
 	}
-	public void setBrightness(JButton brightness) {
-		this.brightness = brightness;
+	public void setInversion(JButton inversion) {
+		this.inversion = inversion;
 	}
+	
 }
