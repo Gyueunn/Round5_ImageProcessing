@@ -61,9 +61,7 @@ public class MainFrame extends JFrame {
 	ActionListener listener = new ActionListener() {
 		@Override
         public void actionPerformed(ActionEvent e) {
-        	
         	String input = e.getActionCommand();
-        	
         	if(input.equals("Open")) {
                 if(fileChooser.showOpenDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION){
                    	System.out.println("filePath : " + fileChooser.getSelectedFile().toString());
@@ -149,9 +147,7 @@ public class MainFrame extends JFrame {
                 control.setVisible(true);
                 control.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 
-                
-                BufferedImage i;
-            	i = imagePanel.getRightPanel().getImage();
+                BufferedImage i = imagePanel.getRightPanel().getImage();
 				slider.addChangeListener(new ChangeListener() {
                     public void stateChanged(ChangeEvent e) {
                     	BufferedImage temp = i;
@@ -203,6 +199,8 @@ public class MainFrame extends JFrame {
         		try {
         			image1 = ImageIO.read(fileChooser.getSelectedFile());
         			image2 = ImageIO.read(fileChooser.getSelectedFile());
+        			imagePanel.getLeftPanel().setImage(image1);
+	        		imagePanel.getLeftPanel().repaint();
         			imagePanel.getRightPanel().setImage(image2);
 	        		imagePanel.getRightPanel().repaint();
 				} catch (IOException e1) {
@@ -219,7 +217,6 @@ public class MainFrame extends JFrame {
 	};
 	
 	class MyMouseListener extends MouseAdapter {
-//		BufferedImage temp = i;
 		public void mousePressed(MouseEvent e){
 			x = e.getX() * image1.getWidth() / 649;
 			y =  e.getY() * image1.getHeight() / 649;

@@ -34,13 +34,13 @@ public class ButtonPanel extends JPanel {//버튼액셩 리스너
 		brightness.setFont(new Font("Arial", Font.ITALIC, 30));
 		this.add(brightness);
 		
-		crop = new JButton("Crop");
-		crop.setFont(new Font("Arial", Font.ITALIC, 30));
-		this.add(crop);
-		
 		inversion = new JButton("Inversion");
 		inversion.setFont(new Font("Arial", Font.ITALIC, 30));
 		this.add(inversion);
+		
+		crop = new JButton("Crop");
+		crop.setFont(new Font("Arial", Font.ITALIC, 30));
+		this.add(crop);
 		
 		origin = new JButton("Reset");
 		origin.setFont(new Font("Arial", Font.ITALIC, 30));
